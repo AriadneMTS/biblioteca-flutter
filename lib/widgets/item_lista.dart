@@ -15,8 +15,6 @@ class ItemLista extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: Row(
             children: [
-              Text("#${livro.codigo}", style: const TextStyle(fontSize: 40),),
-
               Text(livro.titulo, style: const TextStyle(fontSize: 40),),
             ],
           )

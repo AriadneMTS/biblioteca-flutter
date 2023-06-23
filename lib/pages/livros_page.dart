@@ -45,15 +45,18 @@ class _LivrosPageState extends State<LivrosPage> {
   Widget _criarLista(List<Livro> listaDados) {
     return ListView.builder(
         itemBuilder: (context, index) {
-          return Padding(
-            padding: const EdgeInsets.all(4),
-            child: GestureDetector( //add click na tela
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DetalhesPage(listaDados![index])));
-              },
-              child: ItemLista(listaDados[index]),
-            ),
-          );
+          if(listaDados.length > index) {
+            return Padding(
+              padding: const EdgeInsets.all(4),
+              child: GestureDetector( //add click na tela
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => DetalhesPage(listaDados![index])));
+                },
+                child: ItemLista(listaDados[index]),
+              ),
+            );
+          }
         });
   }
 }

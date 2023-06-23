@@ -21,6 +21,7 @@ class _DetalhesPageState extends State<DetalhesPage> {
       ),
       body: ListView(children: [
         Text(widget.livro.titulo),
+        Text(widget.livro.autor.nome),
       ]),
     );
   }

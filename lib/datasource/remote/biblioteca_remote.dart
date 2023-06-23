@@ -12,8 +12,7 @@ class LivroRemote {
   }
 
   Future<List<Livro>> getByRa(String ra) async {
-    var dados = await ClienteHttp().getJson("$link/$ra");
-
+    var dados = await ClienteHttp().getJson("http://127.0.0.1:8000/api/alunos/livros/$ra");
     return dados.map((e) => Livro.fromMap(e)).toList();
   }
 
